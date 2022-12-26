@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Diagnostics.Tracing;
+using System.Windows.Forms;
 using Savas.Library.Concrete;
 
 namespace Savas.Dekstop
@@ -9,6 +11,7 @@ namespace Savas.Dekstop
         public AnaForm()
         {
             InitializeComponent();
+            _oyun.GecenSureDegisti += Oyun_GecenSureDegisti;
         }
 
         private void AnaForm_KeyDown(object sender, KeyEventArgs e)
@@ -30,5 +33,12 @@ namespace Savas.Dekstop
 
             }
         }
+
+        private void Oyun_GecenSureDegisti(object sender, EventArgs e)
+        {
+            SureLabel.Text = _oyun.GecenSure.ToString(@"m\:ss");
+        }
+            
+         
     }
 }

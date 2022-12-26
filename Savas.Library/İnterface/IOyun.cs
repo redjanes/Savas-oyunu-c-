@@ -9,12 +9,10 @@ namespace Savas.Library.İnterface
 {
     internal interface IOyun
     {
+        event EventHandler GecenSureDegisti;
         bool DevamEdiyorMu { get; }
         TimeSpan GecenSure { get; }
 
-        
-        
-        
         void Baslat();
         void AtesEt();
         void UCaksavariHareketEttir(Yon yon);
