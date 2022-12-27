@@ -19,6 +19,7 @@ namespace Savas.Library.Concrete
         #region Alanlar
 
         private readonly Timer _gecenSureTimer = new Timer { Interval = 1000 };
+        private readonly Timer _hareketTimer = new Timer { Interval = 100 };
         private TimeSpan _gecenSure;
         private readonly Panel _ucaksavarPanel;
         private readonly Panel _SavasalaniPanel;
@@ -51,20 +52,53 @@ namespace Savas.Library.Concrete
             _ucaksavarPanel= ucaksavarPanel;
             _SavasalaniPanel = savasalaniPanel;
             _gecenSureTimer.Tick += GecenSureTimer_Tick;
+            _hareketTimer.Tick += hareketTimer_Tick;
         }
         private void GecenSureTimer_Tick(object sender, EventArgs e)
         {
             GecenSure += TimeSpan.FromSeconds(1);
         }
+
+        private void hareketTimer_Tick(object sender, EventArgs e)
+        {
+            MermileriHareketEttir();
+        }
+
+        private void MermileriHareketEttir()
+        {
+            for (int i = _mermiler.Count-1; i >= 0; i--)
+            {
+                var mermi = _mermiler[i];
+                var carptiMi = mermi.HareketEttir(Yon.Yukari);
+                if (carptiMi)
+                {
+                    _mermiler.Remove(mermi);
+                    _SavasalaniPanel.Controls.Remove((mermi));
+                }
+
+            }
+
+
+
+        }
+
+
         public void Baslat()
         {
             if (DevamEdiyorMu) return;
             
             DevamEdiyorMu = true;
-            _gecenSureTimer.Start();
+           
+            ZamanlayicilarBaslat();
 
             UcaksavarOlustur();
         }
+
+        private void ZamanlayicilarBaslat()
+        {
+            _gecenSureTimer.Start();
+            _hareketTimer.Start();
+        } 
 
         private void UcaksavarOlustur()
         {
@@ -79,7 +113,14 @@ namespace Savas.Library.Concrete
 
             if (!DevamEdiyorMu) return;
             DevamEdiyorMu = false;
+           
+            ZamanlayıcılarıDurdur();
+        }
+
+        private void ZamanlayıcılarıDurdur()
+        {
             _gecenSureTimer.Stop();
+            _hareketTimer.Stop();
         }
 
         public void AtesEt()
