@@ -11,10 +11,10 @@ namespace Savas.Library.Concrete
 {
     internal class Ucaksavar:Cisim
     {
-        public Ucaksavar(int panelGenisligi)
+        public Ucaksavar(int panelGenisligi, Size hareketAlaniBoyutlari): base(hareketAlaniBoyutlari)
         {
-            Left = (panelGenisligi - Width) / 2;
-            SizeMode = PictureBoxSizeMode.AutoSize;
+            Center = panelGenisligi / 2;
+            HareketMesafesi = Width;
         }
     }
 }

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
             this.BilgiPanel = new System.Windows.Forms.Panel();
+            this.SureLabel = new System.Windows.Forms.Label();
+            this.BilgiLabel = new System.Windows.Forms.Label();
             this.UcakSavarPanel = new System.Windows.Forms.Panel();
             this.SavasAlaniPanel = new System.Windows.Forms.Panel();
-            this.BilgiLabel = new System.Windows.Forms.Label();
-            this.SureLabel = new System.Windows.Forms.Label();
             this.BilgiPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,28 @@
             this.BilgiPanel.Name = "BilgiPanel";
             this.BilgiPanel.Size = new System.Drawing.Size(1119, 145);
             this.BilgiPanel.TabIndex = 0;
+            // 
+            // SureLabel
+            // 
+            this.SureLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SureLabel.Location = new System.Drawing.Point(901, 39);
+            this.SureLabel.Name = "SureLabel";
+            this.SureLabel.Size = new System.Drawing.Size(206, 64);
+            this.SureLabel.TabIndex = 1;
+            this.SureLabel.Text = "0:00";
+            this.SureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // BilgiLabel
+            // 
+            this.BilgiLabel.AutoSize = true;
+            this.BilgiLabel.Font = new System.Drawing.Font("Leelawadee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BilgiLabel.Location = new System.Drawing.Point(12, 39);
+            this.BilgiLabel.Name = "BilgiLabel";
+            this.BilgiLabel.Size = new System.Drawing.Size(599, 75);
+            this.BilgiLabel.TabIndex = 0;
+            this.BilgiLabel.Text = "Oyunu başlatmak için ENTER tuşuna basınız.\r\nUçaksavarı hareket ettirmek için SAĞ/" +
+    "SOL yön tuşlarına basınız.\r\nAteş etmek için BOŞLUK tuşuna basınız";
             // 
             // UcakSavarPanel
             // 
@@ -65,28 +87,6 @@
             this.SavasAlaniPanel.Name = "SavasAlaniPanel";
             this.SavasAlaniPanel.Size = new System.Drawing.Size(1119, 458);
             this.SavasAlaniPanel.TabIndex = 2;
-            // 
-            // BilgiLabel
-            // 
-            this.BilgiLabel.AutoSize = true;
-            this.BilgiLabel.Font = new System.Drawing.Font("Leelawadee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BilgiLabel.Location = new System.Drawing.Point(12, 39);
-            this.BilgiLabel.Name = "BilgiLabel";
-            this.BilgiLabel.Size = new System.Drawing.Size(599, 75);
-            this.BilgiLabel.TabIndex = 0;
-            this.BilgiLabel.Text = "Oyunu başlatmak için ENTER tuşuna basınız.\r\nUçaksavarı hareket ettirmek için SAĞ/" +
-    "SOL yön tuşlarına basınız.\r\nAteş etmek için BOŞLUK tuşuna basınız";
-            // 
-            // SureLabel
-            // 
-            this.SureLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SureLabel.Location = new System.Drawing.Point(901, 39);
-            this.SureLabel.Name = "SureLabel";
-            this.SureLabel.Size = new System.Drawing.Size(206, 64);
-            this.SureLabel.TabIndex = 1;
-            this.SureLabel.Text = "0:00";
-            this.SureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AnaForm
             // 

@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Enum\yon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="İnterface\IHareketEden.cs" />
     <Compile Include="İnterface\IOyun.cs" />
   </ItemGroup>
   <ItemGroup>
