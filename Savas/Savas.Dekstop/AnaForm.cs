@@ -12,7 +12,7 @@ namespace Savas.Dekstop
         {
             InitializeComponent();
             
-            _oyun = new Oyun(UcakSavarPanel);
+            _oyun = new Oyun(UcakSavarPanel,SavasAlaniPanel);
             _oyun.GecenSureDegisti += Oyun_GecenSureDegisti;
         }
 
